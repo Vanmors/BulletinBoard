@@ -38,7 +38,7 @@ public class TopicController {
     }
 
     @DeleteMapping("{topicId}")
-    public HttpStatus createTopicWithMessage(@PathVariable Long topicId) throws ChangeSetPersister.NotFoundException {
+    public HttpStatus deleteTopicWithMessage(@PathVariable Long topicId) throws ChangeSetPersister.NotFoundException {
         topicService.deleteTopicWithMessages(topicId);
         return HttpStatus.OK;
     }

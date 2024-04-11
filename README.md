@@ -6,9 +6,14 @@
 Сообщение должно содержать имя (ник) автора, текст сообщения, дату создания.  
 Сообщение обязательно должно относиться к одному из топиков.  
 Необходимо реализовать клиентский REST-API позволяющий пользователю:  
-1) получать список топиков
-2) получать сообщения в указанном топике
-3) создать топик (с первым сообщением в нем)
-4) создать сообщение в указанном топике
-5) отредактировать свое сообщение
-6) удалить свое сообщение
+
+Было реализовано:
+1) 2 основных контроллера [topic](src/main/java/org/example/controller/TopicController.java) и [message](src/main/java/org/example/controller/MessageController.java)
+2) Также было добавлена аутентификация пользователей с ролевой моделью, которая включается админа, который дополнительно
+   может редактировать и удалять любые сообщения и топики.
+ [config](src/main/java/org/example/config/SecurityConfig.java)  
+для создания пользоватея были написаны [UserController](src/main/java/org/example/controller/UserController.java) и
+   [RoleController](src/main/java/org/example/controller/RoleController.java)
+3) В качестве базы данных используется H2
+4) К базе данных был написан [скрипт](src/main/resources/data.sql) заполнения
+5) Также были написаны [тесты](src/test/java/example/controller) на контроллеры

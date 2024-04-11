@@ -31,7 +31,6 @@ public class MessageService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String authorName = authentication.getName();
 
-        System.out.println(authorName);
         Optional<Topic> optionalTopic = topicRepository.findById(topicId);
 
         if (optionalTopic.isEmpty()) {
@@ -123,7 +122,6 @@ public class MessageService {
         List<String> roles = new ArrayList<>();
         for (GrantedAuthority authority : authorities) {
             roles.add(authority.getAuthority());
-            System.out.println(authority.getAuthority());
         }
         return roles;
     }
