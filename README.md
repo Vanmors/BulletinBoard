@@ -9,10 +9,10 @@
 
 Было реализовано:
 1) 2 основных контроллера [topic](src/main/java/org/example/controller/TopicController.java) и [message](src/main/java/org/example/controller/MessageController.java)
-2) Также было добавлена аутентификация пользователей с ролевой моделью, которая включается админа, который дополнительно
+2) Также было добавлена аутентификация пользователей с ролевой моделью, которая включает админа, который дополнительно
    может редактировать и удалять любые сообщения и топики.
- [config](src/main/java/org/example/config/SecurityConfig.java)  
-для создания пользоватея были написаны [UserController](src/main/java/org/example/controller/UserController.java) и
+ [security config](src/main/java/org/example/config/SecurityConfig.java)  
+Для создания пользоватея были написаны [UserController](src/main/java/org/example/controller/UserController.java) и
    [RoleController](src/main/java/org/example/controller/RoleController.java)
 3) В качестве базы данных используется H2
 4) К базе данных был написан [скрипт](src/main/resources/data.sql) заполнения

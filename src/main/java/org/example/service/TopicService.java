@@ -26,12 +26,10 @@ public class TopicService {
 
     @Transactional
     public Topic createTopicWithMessage(NewTopicWithMessageDTO newTopicWithMessageDTO) {
-        // Создаем новый топик
         Topic topic = new Topic();
         topic.setTitle(newTopicWithMessageDTO.getTopicTitle());
         Topic createdTopic = topicRepository.save(topic);
 
-        // Создаем новое сообщение и связываем его с топиком
         Message message = new Message();
         message.setAuthorName(newTopicWithMessageDTO.getAuthorName());
         message.setText(newTopicWithMessageDTO.getText());

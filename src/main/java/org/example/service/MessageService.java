@@ -83,6 +83,7 @@ public class MessageService {
         messageRepository.delete(message);
     }
 
+    @Transactional
     public void editMessage(Long topicId, Long messageId, MessageDTO messageDTO) throws AccessDeniedException {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
